@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a1b">
+  <meta name="description" content="MIDAD AI LAB — مختبر الذكاء الاصطناعي متعدد الوسائط">
+  <title>MIDAD AI LAB | مختبر مِداد</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="MIDAD AI LAB">
+        <span class="brand-mark">M</span><span><b>MIDAD</b><small>AI LAB</small></span>
+      </a>
+      <div class="side-label">مساحة العمل</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="home"><span>⌂</span> الرئيسية</button>
+        <button class="nav-item" data-view="text"><span>✳</span> توليد النصوص</button>
+        <button class="nav-item" data-view="image"><span>▧</span> توليد الصور</button>
+        <button class="nav-item" data-view="audio"><span>♫</span> استوديو الصوت</button>
+        <button class="nav-item" data-view="video"><span>▣</span> استوديو الفيديو</button>
+      </nav>
+      <div class="side-bottom">
+        <div class="status-dot"></div><span>النسخة التأسيسية</span>
+        <small>0.1.0</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+        <div><span class="eyebrow">مختبر الإبداع الذكي</span><h1 id="pageTitle">مرحباً بك في مِداد</h1></div>
+        <div class="top-actions"><span class="local-badge">واجهة تجريبية</span><span class="avatar">م</span></div>
+      </header>
+
+      <section class="view active" id="view-home">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="pill"><i></i> مساحة واحدة لأفكار متعددة</span>
+            <h2>حوّل أفكارك إلى<br><em>إبداع ملموس.</em></h2>
+            <p>مختبر موحّد للنصوص والصور والصوت والفيديو. نطوّر محركه خطوة بخطوة باستخدام نماذج مفتوحة المصدر.</p>
+            <button class="primary-btn" data-go="text">ابدأ بإنشاء محتوى <b>←</b></button>
+          </div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core">M<span>AI</span></div><div class="orbit-tag tag-a">TEXT</div><div class="orbit-tag tag-b">IMAGE</div><div class="orbit-tag tag-c">AUDIO</div><div class="orbit-tag tag-d">VIDEO</div></div>
+        </div>
+        <div class="section-head"><div><span class="eyebrow">أدوات المختبر</span><h2>اختر مساحة الإبداع</h2></div><span class="muted">04 وحدات</span></div>
+        <div class="tool-grid">
+          <button class="tool-card" data-go="text"><span class="tool-icon violet">✳</span><b>النصوص</b><p>كتابة، تلخيص، شرح وصياغة الأفكار.</p><span class="card-link">فتح الأداة ←</span></button>
+          <button class="tool-card" data-go="image"><span class="tool-icon amber">▧</span><b>الصور</b><p>تصوّر الأفكار بصرياً من وصف نصي.</p><span class="card-link">فتح الأداة ←</span></button>
+          <button class="tool-card" data-go="audio"><span class="tool-icon cyan">♫</span><b>الصوت</b><p>تحويل النص إلى كلام والتفريغ الصوتي.</p><span class="card-link">فتح الأداة ←</span></button>
+          <button class="tool-card" data-go="video"><span class="tool-icon rose">▣</span><b>الفيديو</b><p>استكشاف إنشاء المقاطع بالذكاء الاصطناعي.</p><span class="card-link">فتح الأداة ←</span></button>
+        </div>
+        <div class="notice"><span>ⓘ</span><div><b>حول هذه النسخة</b><p>الواجهة جاهزة كبداية. لم يتم توصيل نماذج التوليد بعد؛ لن نعرض نتائج وهمية. سنضيف المحركات ونختبرها قبل تفعيل التوليد.</p></div></div>
+      </section>
+
+      <section class="view" id="view-generator">
+        <div class="workspace">
+          <div class="workspace-heading"><span class="eyebrow" id="toolEyebrow">استوديو الكتابة</span><h2 id="toolTitle">توليد النصوص</h2><p id="toolDescription">اكتب ما تريد إنجازه، وسنجهّز مساحة العمل المناسبة.</p></div>
+          <label class="field-label" for="prompt">وصف طلبك</label>
+          <textarea id="prompt" rows="6" placeholder="اكتب فكرتك هنا بالتفصيل..."></textarea>
+          <div class="form-row"><label class="field-label" for="language">لغة المحتوى</label><select id="language"><option value="ar">العربية</option><option value="en">الإنجليزية</option><option value="fr">الفرنسية</option></select></div>
+          <button class="primary-btn generate-btn" id="generateBtn">إرسال الطلب <b>←</b></button>
+          <div class="result-panel" id="resultPanel"><span class="result-icon">✧</span><div><b>مساحة النتائج</b><p id="resultText">ستظهر النتائج هنا بعد توصيل محرك التوليد.</p></div></div>
+        </div>
+      </section>
+      <footer>© 2026 MIDAD AI LAB <span>نبني الإمكانات، خطوة بخطوة.</span></footer>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
