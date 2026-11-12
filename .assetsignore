@@ -1,0 +1,4 @@
+worker/
+wrangler.toml
+README.md
+.assetsignore
